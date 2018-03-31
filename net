@@ -1,0 +1,500 @@
+Sabitler :
+  Sabitler uzun ve akılda kalması zor olan verileri tanımlamak için kullanılırlar. Sabitler tanımlandıktan sonra asla değiştirilemezler. Const kelimesi ile sabit tanımlanır.
+const String s = "Muğla Meslek En iyi Okuldur";
+            const double pi_s = 3.141592;
+            int r = 10;
+            Response.Write(s + "<BR>");
+            Response.Write("Pi= " + pi_s + "<BR>");
+            Response.Write("dairenin çevresi : " + (2 * pi_s * 10) + "<BR>");
+            Response.Write("dairenin alanı : " + (pi_s * r*r));        
+
+DİZİLER :
+Diziler ardışık değişken tanımlamada ve bunları kullanmada programcılara oldukça kolaylık sağlayan yapılardır. C# da dizi tanımlamak için 2 değişik yol vardır.
+1.	YOL : 
+Dizilere sabit bir eleman sayısının verildiği tanımlama şeklidir. Eleman sayısı  sonradan değiştirilemez.
+   Dizi_Tipi [] Dizi_Adı = new Dizi_Tipi[Eleman Sayısı];
+İnt [] A=new int [10];
+Double []X = new double[100];
+String [] S=new String[40];
+Char[ , ] harf=new[3,4];
+İnt [ , ] b=new int[10,10];
+2.	YOL 
+   Dizinin hafıza gözlerine başlangıç değerlerinin atanıp bu değerlerin sayısı kadar eleman sayısının ima edildiği tanımlama şeklidir.
+İnt [] D = {1,2,3,4,5};
+String [] isim = {“Serdar”,”Süleyman”,”Hürrem”,”Bar”};
+İnt [ , ] K={{1,2,3},{4,5,6}};
+Örnek :
+Length Fonksiyonu :
+Dizinin eleman sayısını verir.
+ İnt [] A = new int [10];
+ Response.Write(A.Length);
+int[] X = {50,47,15,950,75};
+            int a, p = 0;
+            for(a=0;a<=X.Length-1;a++)
+            {
+                 if(X[a] % 10==0)
+                 {
+                     p++;
+                 }
+            }
+             Response.Write("Sonu 0 olan "+p+"tane eleman vardır.");
+             
+             
+             
+             
+             
+             3
+             
+             
+             
+             
+             
+             
+             OPERATÖRLER
+OPERATÖR	İŞLEVİ	ÖRNEK KULLANIM
+=	Atama	A=b
++	Toplama	A=a+b
+-	çıkarma	A=a-b
+*	Çarpma	A=a*100
+/	Bölme	A=a/2
+%	Kalan	A=a%7
+++	Bir artırma	A++
+--	Bir azaltma	b--
+İŞLEMLİ ÖZEL ATAMA OPERATÖRLERİ
+OPERATÖR	KULLANIMI	EŞDEĞERİ
++=	a+=b	a=a+b
+-=	a-=b	a=a-b
+*=	a*=b	a=a*b
+/=	a/=b	a=a/b
+%=	a%=b	a=a%b
+MANTIKSAL OPERATÖRLER
+OPERATÖR	ANLAMI	KULLANIMI
+==	Eşit mi?	A==B
+<	Küçük mü ?	A<B
+>	Büyük mü?	A>B
+<=	Küçük yada Eşitmi	A<=B
+>=	Büyük yada Eşit ?	A>=B
+!=	Eşit Değil mi?	A!=B
+OPERATÖRLERDE İŞLEM ÖNCELİĞİ
+İşlem önceliği	Operatör
+1	X++,x--, ()
+2	++X,--x
+3	*,/,%
+4	+,-
+Örnek:
+      int k, t = 72; k = t % 7;
+            Response.Write("Kalan=" + k + "<BR>");
+            int x = 10, y = 100, p = 10;
+            x += y;
+            Response.Write("Toplam="+x+"<BR>");
+            x /= 2;
+            Response.Write("Bölüm=" + x + "<BR>");
+            p++;
+            Response.Write("P++="+ p + "<BR>");
+            int A;
+            A = 3 + 2 * 4;
+            Response.Write("3+2*4=" + A + "<BR>");
+
+KARAR YAPILARI
+Programları dallandırmak için kullanılan yapılardır. Belirli bir şarta bağlı olarak farklı işlemleri yapmak gerekirse kullanılır. Dolayısı ile şart ifadeleri programın akışını kontrol eden yapılardır. Şart ifadeleri 3 guruba ayrılır.
+1.	If yapısı
+2.	Switch yapısı
+3.	?: Operatörü
+IF – ELSE YAPISI
+ Programın akışını kontrol etmek için kullanılır. Belirli şartlara göre istenilen kodları çalıştırmak için kullanılır. 
+
+İf(Şart)
+ {
+ İşlem A;
+}	İf(Şart)
+ {
+ İşlem A;
+}
+Else
+{
+İşlem B;
+}	İf(Şart) {
+ İşlem A;
+} else  if(şart 2){
+İşlem B;
+} else if(şart 3){
+İşlem C;
+} else{
+ İşlem D;
+}
+
+Örnek mutlak değer :
+int a = -10;
+            if (a < 0)
+                a *= (-1);
+            Response.Write("Mutlak Değer=" + a);
+
+Ortalama hesabı örneği :
+  short  vize=50,final=90;
+            double ort;
+            ort = vize * 0.4 + final * 0.6;
+            if (ort >= 70)
+                Response.Write("Tekbrikler :" + ort);
+            else
+                Response.Write(";-( =>" + ort+"Çok üzgünsün biliyom ama yapcak bişey yok");
+
+Girilen 3 sayıdan en büyüğü ile en küçüğü arasındaki farkı bulan program:
+  int s1=50, s2=30, s3=43;
+            int eb=0,ek=0;
+            if (s1 > s2 & s1 > s3)
+                eb = s1;
+            if (s2 > s1 & s2 > s3)
+                eb = s2;
+            if (s3 > s2 & s3 > s1)
+                eb = s3;
+                  if (s1 < s2 & s1 < s3)
+                    ek = s1;
+                  if (s2 < s1 & s2 < s3)
+                    ek = s2;
+                  if (s3 < s2 & s3 < s1)
+                    ek = s3;
+              Response.Write("En büyük - En küçük farkı :" + (eb - ek));
+
+
+             
+             
+             
+             
+             
+             4
+             
+             
+             
+             
+             
+             
+             
+                	
+Üç sayıdan ortadakini bulduran program;
+
+ int s1 = 67, s2 = 98, s3 = 15;
+            int eb = 0, ek = 0, ortanca=0;
+            if (s1 > s2 & s1 > s3)
+                eb = s1;
+            if (s2 > s1 & s2 > s3)
+                eb = s2;
+            if (s3 > s2 & s3 > s1)
+                eb = s3;
+            if (s1 < s2 & s1 < s3)
+                ek = s1;
+            if (s2 < s1 & s2 < s3)
+                ek = s2;
+            if (s3 < s2 & s3 < s1)
+                ek = s3;
+            if (s1 < eb && s1 > ek)
+                ortanca = s1;
+            if (s2 < eb && s2 > ek)
+                ortanca = s2;
+            if (s3 < eb && s3 > ek)
+                ortanca = s3;
+            Response.Write("ortanca Sayımız:" + ortanca);
+
+Vize ve finale göre harf notunu bulan program ;
+  int vize = 90, final = 87;
+            double ort;
+            ort = vize * 0.4 + final * 0.6;
+            if (ort >= 90)
+                Response.Write("Harf notu:AA");
+            else if (ort >= 85)
+                Response.Write("Harf notu:BA");
+            else if (ort >= 80)
+                Response.Write("Harf notu:BB");
+            else if (ort >= 75)
+                Response.Write("Harf notu:CB");
+            else if (ort >= 70)
+                Response.Write("Harf notu:CC");
+            else if (ort >= 65)
+                Response.Write("Harf notu:DC");
+            else if (ort >= 60)
+                Response.Write("Harf notu:DD");
+            else if (ort >= 50)
+                Response.Write("Harf notu:FD");
+            else
+                Response.Write("Harf notu:FF");
+SWITCH YAPISI:
+Switch yapısı if yapısındaki if-else if yapısına sahiptir. Bu yapının yerine alternatif olarak kullanılabilir.
+	*Sadece tamsayılar sorgulanabilir.
+	*Aralık belirlenemez.
+	*Hatalı kullanım ihtimali yüksektir.
+switch(X) {
+case 1: İşlem A; break;
+case 2: İşlem B; break;
+case 3:İşlem C; break;
+  default:
+     İşlem D;break;
+}	İf(X==1){
+   İşlem A;
+} else if (X==2) {
+  İşlem B;
+} else if(X==3) {
+  İşlem C;
+} else { İşlem D;
+}
+ 
+  ? :   Operatörü ;
+          İf yapısının daha basit halidir kullanımı şu şekildedir ;
+    (şart ifadesi) ? işlem A: işlem B;
+Örnek :
+   int a=100,b;
+            b=(a==100) ? 40 : 20 ;
+             Response.Write("b'nin değeri ="+b);
+
+FOR- DÖNGÜSÜ
+Bir veya daha fazla çalıştırılacak olan komut veya komutlar için kullanılır.
+ Sabit döngü : For Döngüsü
+Şartlı Döngüler : While Döngüsü ve Do-While Döngüsü
+ For yapısı: 
+    For(x=1;x<=10;x++)
+{
+ İşlemler
+}
+Örnek : 1 den 10 ‘a kadar sayıları toplayan program.
+   int i = 0, toplam = 0;
+            for (i = 0; i <= 10; i++)
+                toplam = toplam + i;
+            Response.Write("toplam:" + toplam);
+1 den 99 a kadar tek sayıların ortalaması ve yoplamını bulan program
+int a, top=0, sayac = 0;
+            for (a = 1; a <= 100; a++)
+            {
+                if (a % 2 == 1)
+                {
+                    top += a;
+                    sayac++;
+                }
+            }
+            Response.Write("Toplam =" + top+"<BR>");
+            Response.Write("Ortalama="+(top/sayac));
+
+
+
+
+
+5
+
+
+
+
+While Döngüsü
+While döngüsü şartlı bir döngü olup şart döngünün başındadır. Şart tuttuğu sürece parantezle arası çalıştırılır. Eğer baştaki şart tutmazsa program hiç döngüye girmez.Genel biçimi ;
+       While (x>10)
+      {
+    İşlem A;
+       }
+Örnek :
+   int a = 0, top = 0;
+            while (a < 10)
+            {
+                a++; 
+                top += a;
+                Response.Write(a + "<BR>");
+            }
+            Response.Write("Toplam=" + top);
+
+Do-While Döngüsü
+Şart döngüye girecek kodların en sonunda bulunur. Şart tuttuğu sürece parantezler arası çalıştırılır. Program akışı şarta bakmaksızın döngü içerisine girerek parantez arasını bir kere çalıştırır. Sonra şarta bakar, eğer şart tutmazsa program döngüden çıkar. Şart tutarsa döngü şartı bozulana kadar döner.
+Yapısı :
+ Do
+{
+ İşlem A;
+} while (x>10);
+Örnek : do-while ile 1 den 10 ‘a kadar olan sayıların toplamı :
+       int a = 0, top = 0;
+            do
+            {
+                a++;
+                top += a;
+                Response.Write(a + "<BR>");
+            } while (a < 10);
+            Response.Write("Toplam=" + top);
+
+1den 50 ye kadar olan tek sayıların toplamını ve ortalamasını bulup ekrana yazan program.
+  int i = 1, toplam = 0,adet=0;
+            for (i = 1; i <= 99;i++)
+                if (i % 2 == 1)
+                {
+                    adet++;
+                    toplam += i;
+                }
+            Response.Write("toplam:" + toplam+"<BR>");
+            Response.Write("Ortalaması:" +(toplam/adet) );
+
+30 dan 50 ye çift sayıların toplam ve ortalamasını bulan program…
+int i = 0, toplam = 0,adet=0;
+            for (i =30; i <= 50;i++)
+                if (i % 2 == 0)
+                {
+                    adet++;
+                    toplam += i;
+                }
+            Response.Write("toplam:" + toplam+"<BR>");
+            Response.Write("Ortalaması:" +(toplam/adet));
+
+Örnek : faktöriyel programı.
+int i = 0, carpim = 1;
+            for (i = 1; i <= 5; i++)
+                carpim *= i; //carpim=carpim*i;
+            Response.Write("faktoriyel : " + carpim);
+
+Web form üzerinden textbox ile girilen faktöriyeli  buldurma.
+   protected void Button1_Click(object sender, EventArgs e)
+        {
+            int i = 0, carpim = 1,a=0;
+            a =Convert.ToInt16(TextBox1.Text);
+            for (i = 1; i <= a; i++)
+                carpim *= i; //carpim=carpim*i;
+            Response.Write("faktoriyel : " + carpim);
+
+        }
+
+
+
+
+
+
+
+6
+
+
+
+
+
+
+Fonksiyon örnekleri :
+
+   double x;
+            int a = 5;
+            x = Math.PI;
+            Response.Write("Pi sayısı =" + x + "<BR>");
+            x = Math.Cos(Math.PI);
+            Response.Write("Cos 180 =" + x + "<BR>");
+            x = Math.Pow(a,3);
+            Response.Write("5^3="+ x + "<BR>");
+Rasgele sayı üretme örneği.
+double k = 0;
+            int a, c;
+            Random rasgele = new Random();
+            a = rasgele.Next();
+            Response.Write("Rasgele a :" + a+"<BR>");
+            c = rasgele.Next(10,20);
+            Response.Write("Rasgele c :" + c + "<BR>");
+            a = rasgele.Next(10);
+            Response.Write("Rasgele a :" + a + "<BR>");
+            k = rasgele.NextDouble();
+            Response.Write("Rasgele double k :" + k + "<BR>");
+
+Sayı tahmin oyunu :
+protected void Page_Load(object sender, EventArgs e)
+        {
+         
+           Random rasgele = new Random();
+            a = rasgele.Next(10);
+           
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            int tahmin=0;
+            
+           tahmin = Convert.ToInt16(TextBox1.Text);
+                if (tahmin == a)
+                
+                    Response.Write("Tebrikler Bildiniz...");
+                                else
+                    Response.Write("Tekrar Deneyiniz...");
+                Response.Write("tutulan sayı :" + a);
+         }
+
+String fonksiyonları…
+String S = "İstanbul";
+            Response.Write("S.Length :" + S.Length + "<BR>");  //Stringin Uzunluğunu verir
+            Response.Write("S.ToUpper :" + S.ToUpper() + "<BR>");     //Büyüğe çevirir.
+            Response.Write("S.Substring(5) :" + S.Substring(5) + "<BR>");  // İlk ... karakteri almaz.
+            Response.Write("S.Remove(2,4) :" + S.Remove(2,4) + "<BR>");  //Karakter Siler
+
+Zaman Fonksiyonları :
+
+            DateTime zaman = DateTime.Now;
+            Response.Write("Zaman =" + zaman + "<BR>");
+            Response.Write("Saat =" + zaman.Hour + "<BR>");
+            Response.Write("Dakika =" + zaman.Minute + "<BR>");
+            Response.Write("Saniye =" + zaman.Second + "<BR>");
+            DateTime tarih = DateTime.Now;
+            Response.Write("Tarih =" + tarih.Date + "<BR>");
+            Response.Write("Yıl =" + tarih.Year + "<BR>");
+            Response.Write("Ay =" + tarih.Month + "<BR>");
+            Response.Write("Gün =" + tarih.Day + "<BR>");
+
+
+
+
+
+
+
+
+7
+
+
+
+
+
+
+
+
+
+
+
+
+Sınav öncesi sınava hazırlık çalışmaları:
+
+
+int [] di = {5,10,6,4,89,52,41,68,54,1,22,47,21,45,69,87,52,59,65,62};
+            int i = 0, y = 0,gecici=0;
+            for(i=0;i<=18;i++)
+                 for(y=i+1;y<=19;y++)
+                     if (di[i] < di[y])
+                     {
+                         gecici = di[i];
+                         di[i] = di[y];
+                         di[y] = gecici;
+                     }
+            for (i = 0; i <= 19; i++)
+                Response.Write("dizinin " + i + ". elemanı" + di[i] + "<BR>");
+
+Textbox tan girilen stringi tersinden ortalı olarak yazdıran program. 
+String a = TextBox1.Text;
+            int i;
+           // if (a.Length < 5)
+            for (i = a.Length-1; i >= 0; i--)
+                    Response.Write("<center>" + a[i] );
+
+Formdan girilen iki sayı ile 4 işlem yapan program..
+   int say1 = 0, say2 = 0;
+            say1 = Convert.ToInt16(TextBox1.Text);
+            say2 = Convert.ToInt16(TextBox2.Text);
+            Response.Write("sayıların toplamı :" + (say1 + say2)+"<br>");
+            Response.Write("sayıların çıkarması :" + (say1 - say2) + "<br>");
+            Response.Write("sayıların çarpması :" + (say1 * say2) + "<br>");
+            Response.Write("sayıların bölmesi :" + (say1 / say2) + "<br>");
+
+200 ile 400 arası 6 ya tam bölünen sayıların adetini bulan program.
+  int i = 0, toplam = 0, adet = 0;
+            for (i = 200; i <= 400; i++)
+                if (i % 6 == 0)
+                {
+                    adet++;
+                    toplam += i;
+                    Response.Write(i + ",");
+                }
+            Response.Write("adet :" + adet);     
+
+
+             
+             
+             
+
